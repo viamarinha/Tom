@@ -1,10 +1,11 @@
 package com.example.demogit.controllers;
 
+import com.example.demogit.models.Professeur;
+import com.example.demogit.models.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
-import java.util.List;
 
 @RestController
 public class DemoController {
@@ -16,8 +17,11 @@ public class DemoController {
 
     @GetMapping("/students")
 
-    public List<String> getStudentsList() {
-        return Arrays.asList("Tom", "Cruso", "Goblin");
+    public Professeur getStudentsList() {
+        Student igor = new Student("Igor", 12);
+        Student misha = new Student("Misha", 14);
+        return   Professeur.builder().name("Toto").studentList(Arrays.asList(igor,misha)).build();
+
 
     }
 }
