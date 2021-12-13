@@ -20,6 +20,7 @@ public class DemoController {
     public Professeur getStudentsList() {
         Student igor = new Student("Igor", 12);
         Student misha = new Student("Misha", 14);
+        System.out.println("Nu vot i git vse");
         return   Professeur.builder().name("Toto").studentList(Arrays.asList(igor,misha)).build();
 
 
